@@ -1,9 +1,10 @@
 <template>
   <div class="login">
     <div class="header">
-      <div class="logo">环</div>
+      <div class="logo">家</div>
       <div class="title">
-        颗粒物噪声在线监测平台
+        家政服务云平台
+        <span style="font-size:.8em">顾客端</span>
       </div>
     </div>
     <div class="form">
