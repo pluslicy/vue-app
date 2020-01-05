@@ -6,6 +6,10 @@
       </div>
       <div class="name">{{info.name}}</div>
     </div>
+    
+    <van-cell title="常用地址" is-link to="/manager/address" />
+    <van-cell title="所有订单" is-link to="/manager/order" />
+
     <div class="btn" @click="logoutHandler">
       退出
     </div>
@@ -63,7 +67,7 @@ export default {
 
 .btn {
   width: 90%;
-  margin: 0 auto;
+  margin: 1em auto;
   line-height: 3em;
   text-align: center;
   border: 1px solid #ededed;
