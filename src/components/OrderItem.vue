@@ -1,16 +1,27 @@
 <template>
   <div class="order_item">
     <van-row class="header"> 
-      <van-col span="12">工单编号: {{data.id}}</van-col>
+      <van-col span="12">订单编号: {{data.id}}</van-col>
       <van-col span="12" class="status">{{data.status}}</van-col>
     </van-row>
     <van-row>
       <van-col :span="24" :offset="1">
-        <div>工程编号：GC20129</div>
-        <div>设备编号：HX21021</div>
-        <div>工单类型：装机</div>
+        <div v-if="data.waiter!=null">
+          员工姓名：
+          {{data.waiter.realname}} 
+        </div>
+        <div v-if="data.waiter!=null">
+          员工联系方式：
+          {{data.waiter.telephone}} 
+        </div>
+        <div>总价：{{data.total}}</div>
         <div>服务时间：{{data.orderTime | datefmt}}</div>
-        <div>服务地点：江苏省苏州市工业园区xxx号</div>
+        <div>服务地点：
+          {{data.address.province}} 
+          {{data.address.city}}
+          {{data.address.area}}
+          {{data.address.address}}
+        </div>
       </van-col>
     </van-row>
     <div class="text-right">

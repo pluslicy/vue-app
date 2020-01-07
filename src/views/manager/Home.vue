@@ -56,7 +56,7 @@ export default {
     // 加载产品信息
     loadProducts(){
       let url = "/product/query"
-      let params = { page:0, pageSize:10 }
+      let params = { page:0, pageSize:100 }
       post(url,params).then((response)=>{
         this.products = response.data.list;
       })
