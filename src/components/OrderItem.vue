@@ -14,6 +14,13 @@
           员工联系方式：
           {{data.waiter.telephone}} 
         </div>
+        <div v-if="data.orderLines != null">服务：
+          <span 
+            v-for="line in data.orderLines" 
+            :key="line.id">
+              {{line.product.name}}
+          </span>
+        </div>
         <div>总价：{{data.total}}</div>
         <div>服务时间：{{data.orderTime | datefmt}}</div>
         <div>服务地点：
@@ -25,7 +32,7 @@
       </van-col>
     </van-row>
     <div class="text-right">
-      共计 个服务，合计￥ {{data.total}}
+      共计 {{data.orderLines.length}} 个服务，合计￥ {{data.total}}
     </div>
   </div>
 </template>
